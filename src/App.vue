@@ -14,7 +14,7 @@
 
 <script lang='ts'>
 import { defineComponent, reactive, toRefs } from 'vue';
-import { getAllCoins } from '@/services/CryptoPricesAPI';
+import { getAllCoins } from '@/services/api';
 import { ICoin } from '@/types/ICoin';
 import ShowCoin from '@/components/ShowCoin.vue';
 
