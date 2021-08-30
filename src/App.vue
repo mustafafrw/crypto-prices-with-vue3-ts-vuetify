@@ -1,6 +1,6 @@
 <template>
   <p>
-    selam
+    selams
   </p>
 </template>
 
