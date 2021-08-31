@@ -1,21 +1,31 @@
 <template>
   <v-app>
+    <v-app-bar
+      app
+    >
+      <v-app-bar-title>Coin Prices with Vue3 + TypeScript</v-app-bar-title>
+    </v-app-bar>
+
     <v-main>
-      <div v-if='coins'>
-        <v-list elevation='4'>
-          <div v-for='(coin, index) in coins' :key='index'>
-              <ShowCoin :coin='coin' />
-           </div>
+      <v-container fluid>
+        <div v-if="coins" >
+        <v-list elevation="4">
+          <div v-for="(coin, index) in coins" :key="index">
+              <ShowCoin :coin="coin" />
+            </div>
         </v-list>
       </div>
+      </v-container>
     </v-main>
+    <v-footer app>
+      <!-- -->
+    </v-footer>
   </v-app>
 </template>
 
 <script lang='ts'>
-import { defineComponent, reactive, toRefs } from 'vue';
-import { getAllCoins } from '@/services/api';
-import { ICoin } from '@/types/ICoin';
+import { defineComponent, onMounted  } from 'vue';
+import useCoin from '@/modules/Coin';
 import ShowCoin from '@/components/ShowCoin.vue';
 
 export default defineComponent({
@@ -24,17 +34,14 @@ export default defineComponent({
     ShowCoin,
   },
   setup() {
-      let data = reactive<{ coins: ICoin[] }>({ coins: [] });
 
-      const getCoins = async (): Promise<void> => {
-        const value = await getAllCoins();
-        data.coins = value;
-      };
+      const { coins, loadCoins } = useCoin();
 
-      return { getCoins, ...toRefs(data) };
-  },
-  async created(){
-    this.getCoins();
+      onMounted(async () => {
+        loadCoins();
+      })
+
+      return { coins };
   },
 });
 </script>

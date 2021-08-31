@@ -5,4 +5,4 @@ Made with coingecko.com api
 ### Technologies
 - Vue 3
 - Typescript
-- Vuetify
+- Vuetify 3
