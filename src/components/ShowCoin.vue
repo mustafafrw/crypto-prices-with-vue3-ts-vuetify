@@ -15,7 +15,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from 'vue';
-import { ICoin } from '../types/ICoin';
+import { ICoin } from '@/types/ICoin';
 
 export default defineComponent({
   props: {
