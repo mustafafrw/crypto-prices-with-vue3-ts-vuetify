@@ -1,6 +1,6 @@
 ## Crypto Prices with Vue 3
 
-Demo: 
+Demo: https://modest-turing-c06195.netlify.app/
 
 Made with coingecko.com api 
 
