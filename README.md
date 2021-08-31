@@ -1,5 +1,7 @@
 ## Crypto Prices with Vue 3
 
+Demo: 
+
 Made with coingecko.com api 
 
 ### Technologies
