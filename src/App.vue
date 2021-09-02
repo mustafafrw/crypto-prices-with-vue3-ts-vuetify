@@ -37,7 +37,7 @@
 </template>
 
 <script lang='ts'>
-import { defineComponent, onMounted, ref  } from 'vue';
+import { defineComponent, onMounted  } from 'vue';
 import useCoin from '@/modules/Coin';
 import ShowCoin from '@/components/ShowCoin.vue';
 
